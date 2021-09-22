@@ -14,6 +14,10 @@ class IssueDelete extends React.Component {
     // destructure variables
     // const { id } is the same as this.props.match.params.id
     const { id } = this.props.match.params;
+    console.log(id);
+    {
+      /* correctly passing the id to deleteIssue */
+    }
     return (
       <React.Fragment>
         <button

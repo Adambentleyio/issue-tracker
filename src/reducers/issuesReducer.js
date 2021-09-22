@@ -9,8 +9,11 @@ export default (state = {}, action) => {
         ...state,
         [action.payload.id]: action.payload,
       };
-    case "DELETE_ISSUE":
-      return _.omit(...state, action.payload);
+    case "DELETE_STREAM":
+      return Object.keys(state).reduce((newState, key) => {
+        if (key !== action.payload[0]) newState[key] = state[key];
+        return newState;
+      }, {});
     case "EDIT_ISSUE":
       return {
         ...state,
@@ -20,8 +23,6 @@ export default (state = {}, action) => {
       return {
         ...state,
         [action.payload.id]: action.payload,
-        issueOpen: true,
-        userId: action.userId,
       };
     default:
       return state;

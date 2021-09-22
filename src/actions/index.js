@@ -48,5 +48,5 @@ export const deleteIssue = (id) => async (dispatch) => {
   await issues.delete(`/issues/${id}`);
 
   dispatch({ type: "DELETE_ISSUE", payload: id });
-  // history.push("/");
+  history.push("/");
 };

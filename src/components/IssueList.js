@@ -46,7 +46,7 @@ class IssueList extends React.Component {
       return (
         <div style={{ textAlign: "right" }}>
           <Link to="/issue/new" className="ui button grey">
-            Create Stream
+            Create a new issue
           </Link>
         </div>
       );
